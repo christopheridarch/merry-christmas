@@ -11,17 +11,39 @@ puts 'Creating users ... '
 
 
 
-paul = User.new(firstname: "Paul",lastname:"Job", email: 'paul@gmail.com', password: 123456)
+
+paul = User.new(firstname: "Paul",
+  lastname:"Job",
+  email: 'paul@gmail.com',
+  password: 123456,
+  avatar: File.open(Rails.root.join('db/fixtures/images/paul.jpg'))
+  )
 paul.save!
 
-francois = User.new(firstname: "Francois",lastname:"Job", email: 'francois@gmail.com' , password: 123456)
+francois = User.new(firstname: "Francois",
+  lastname:"Job",
+  email: 'francois@gmail.com',
+  password: 123456,
+  avatar: File.open(Rails.root.join('db/fixtures/images/francois.jpg'))
+  )
 francois.save!
 
-jerome = User.new(firstname: "Jerome", lastname: "Bob", email: 'jerome@gmail.com' , password: 123456)
+jerome = User.new(firstname: "Jerome",
+  lastname: "Bob",
+  email: 'jerome@gmail.com',
+  password: 123456,
+  avatar: File.open(Rails.root.join('db/fixtures/images/jerome.jpg'))
+  )
 jerome.save!
 
-pauline = User.new(firstname: "Pauline", lastname: "Bob", email: 'pauline@gmail.com', password: 123456)
+pauline = User.new(firstname: "Pauline",
+  lastname: "Bob",
+  email: 'pauline@gmail.com',
+  password: 123456,
+  avatar: File.open(Rails.root.join('db/fixtures/images/pauline.jpg'))
+  )
 pauline.save!
+
 
 
 puts 'Users Finished!'
@@ -32,30 +54,81 @@ puts 'Creating xmas_items ... '
 
 
 
-sapin = XmasItem.new(user: paul, name: "sapin", description: "beautiful xmas tree", price_per_day: 15, available: true, photo:"url", address: "paris" )
+sapin = XmasItem.new(user: paul,
+  name: "sapin",
+  description: "beautiful xmas tree",
+  price_per_day: 15,
+  available: true,
+  photo:File.open(Rails.root.join('db/fixtures/images/sapin.jpg')),
+  address: "paris",
+  )
 sapin.save!
 
-lutin = XmasItem.new(user: paul, name: "lutin", description: "lutin Games of thrones", price_per_day: 50, available: true, photo:"url", address: "Kings landing" )
+lutin = XmasItem.new(user: paul,
+  name: "lutin",
+  description: "lutin Games of thrones",
+  price_per_day: 50,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/lutin.jpg')),
+  address: "Kings landing"
+  )
 lutin.save!
 
-pull = XmasItem.new(user: pauline ,name: "Pull de noel", description: "Pull de noel Kiabi", price_per_day: 25, available: true, photo:"url", address: "Nantes" )
+pull = XmasItem.new(user: pauline,
+  name: "Pull de noel",
+  description: "Pull de noel Kiabi",
+  price_per_day: 25,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/pull.jpg')),
+  address: "Nantes" )
+
 pull.save!
 
-guirlande = XmasItem.new(user: pauline, name: "Guirlande", description: "Guirlande de noel", price_per_day: 5, available: true, photo:"url", address: "Nantes" )
+guirlande = XmasItem.new(user: pauline,
+  name: "Guirlande",
+  description: "Guirlande de noel",
+  price_per_day: 5,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/guirlande.jpg')),
+  address: "Nantes" )
 guirlande.save!
 
 
-chausette = XmasItem.new(user: francois, name: "Chausette", description: "Chausette de noel", price_per_day: 15, available: true, photo:"url", address: "paris" )
-chausette.save!
+chaussette = XmasItem.new(user: francois,
+  name: "Chausette",
+  description: "Chausette de noel",
+  price_per_day: 15,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/chaussette.jpg')),
+  address: "paris" )
+chaussette.save!
 
-geant_noel = XmasItem.new(user: francois, name: "Geant de noel", description: "geant_noel Games of thrones", price_per_day: 50, available: true, photo:"url", address: "Kings landing" )
+geant_noel = XmasItem.new(user: francois,
+  name: "Geant de noel",
+  description: "geant_noel Games of thrones",
+  price_per_day: 50,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/geant.jpg')),
+  address: "Kings landing" )
 geant_noel.save!
 
-creche = XmasItem.new(user: jerome ,name: "Creche de noel", description: "Creche de noel de bethleme", price_per_day: 25, available: true, photo:"url", address: "Nantes" )
+creche = XmasItem.new(user: jerome,
+  name: "Creche de noel",
+  description: "Creche de noel de bethleme",
+  price_per_day: 25,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/creche.jpg')),
+  address: "Nantes" )
 creche.save!
 
-sapin_artificielle = XmasItem.new(user: jerome, name: "Sapin artificielle", description: "Sapin artificielle de noel", price_per_day: 5, available: true, photo:"url", address: "Nantes" )
-sapin_artificielle.save!
+sapin_artificiel = XmasItem.new(user: jerome,
+  name: "Sapin artificielle",
+  description: "Sapin artificielle de noel",
+  price_per_day: 5,
+  available: true,
+  photo: File.open(Rails.root.join('db/fixtures/images/sapin_artificiel.jpg')),
+  address: "Nantes" )
+sapin_artificiel.save!
 
 
 puts 'xmas_items Finished!'
