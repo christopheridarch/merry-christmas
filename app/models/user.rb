@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  mount_uploader :avatar, PhotoUploader
   #As Owner
   has_many :xmas_items
   # As a owner I can see the bookings I received

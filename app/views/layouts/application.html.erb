@@ -13,7 +13,9 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+    <%= yield :before_js %>
     <%= javascript_include_tag 'application' %>
+    <%= yield :after_js %>
     <%= render "shared/footer" %>
   </body>
 </html>

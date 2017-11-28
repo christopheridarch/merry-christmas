@@ -1,0 +1,36 @@
+<%= content_for(:before_js) do %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<% end  %>
+
+
+<div class="container">
+  <h1 class="text-center ml6">
+    <span class="text-wrapper">
+      <span class="letters">Welcome on Merry Christmas</span>
+    </span>
+  </h1>
+  <div class="row">
+    <% @xmas_items.each do |xmas_item| %>
+      <div class="col-xs-12 col-sm-4">
+
+
+
+          <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
+          <div class="card" style="
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= bg_img_path %>')">
+            <div class="card-category"><%= xmas_item.name %></div>
+            <div class="card-description">
+              <h2><%= xmas_item.description %></h2>
+            </div>
+          </div>
+
+
+
+      </div>
+    <% end %>
+  </div>
+
+
+
+</div>
