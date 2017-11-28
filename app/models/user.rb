@@ -14,6 +14,6 @@ class User < ApplicationRecord
   has_many :rented_xmas_items, through: :bookings, source: :xmas_item
   has_many :bookings
 
-  validates :lastname, presence: true
-  validates :firstname, presence: true
+  validates :lastname, presence: true, on: :update
+  validates :firstname, presence: true, on: :update
 end
