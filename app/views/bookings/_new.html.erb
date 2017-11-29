@@ -2,8 +2,10 @@
   <div class="form-container">
     <h1>Book  <%= @xmas_item.name.capitalize %> à <%= @xmas_item.user.firstname.capitalize %></h1>
     <%= simple_form_for([@xmas_item, @booking]) do |form| %>
-      <%= form.input :start_date %>
-      <%= form.input :end_date %>
+      <%= form.input :start_date, as: :date  %>
+
+      <%= form.input :end_date, as: :date %>
+
       <div class="text-left">
         <%= form.submit "Check availability", class: "btn btn-danger" %>
       </div>

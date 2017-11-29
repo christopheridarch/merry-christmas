@@ -19,6 +19,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'devise'
+gem 'rails-assets-bootstrap-datepicker', source: 'https://rails-assets.org'
 
 
 group :development, :test do
