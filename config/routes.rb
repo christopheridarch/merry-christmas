@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'xmas_items/index'
 
   devise_for :users
   root to: 'pages#home'
