@@ -1,7 +1,24 @@
 /* Main navbar */
+.fa-tree {
+  font-size: 40px;
+  color: white;
+  margin: 10px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 10px;
+}
+
+.navbar-signin{
+  color: white;
+}
+
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: $brandred;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
