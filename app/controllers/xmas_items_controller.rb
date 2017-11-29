@@ -1,5 +1,5 @@
 class XmasItemsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @xmas_items = XmasItem.all
