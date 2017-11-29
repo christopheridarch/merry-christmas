@@ -13,7 +13,7 @@
     <% @xmas_items.each do |xmas_item| %>
       <div class="col-xs-12 col-sm-4">
 
-
+        <%= link_to xmas_item_path(xmas_item) do %>
 
           <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
           <div class="card" style="
@@ -23,9 +23,10 @@
             <div class="card-description">
               <h2><%= xmas_item.description %></h2>
             </div>
+              <%= cl_image_tag xmas_item.user.avatar, height: 50, width: 50, crop: :fill, class:"card-user" %>
           </div>
 
-
+      <%end  %>
 
       </div>
     <% end %>
