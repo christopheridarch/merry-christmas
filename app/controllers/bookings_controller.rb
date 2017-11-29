@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
-  def new
-    @xmas_item = XmasItem.find(params[:xmas_item_id])
-    @booking   = Booking.new
-  end
+  # def new
+  #   @xmasItem = XmasItem.find(params[:xmas_item_id])
+  #   @booking   = Booking.new
+  # end
 
   def create
     xmas_item             = XmasItem.find(params[:xmas_item_id])
@@ -17,7 +17,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
