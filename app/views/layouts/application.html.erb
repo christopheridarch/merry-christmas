@@ -8,17 +8,15 @@
   </head>
 
   <body>
-    <div class="container">
+    <%= render "shared/navbar" %>
+    <%= render 'shared/flashes' %>
 
-      <%= render "shared/navbar" %>
-      <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= yield :before_js %>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :after_js %>
 
-      <%= yield %>
-      <%= yield :before_js %>
-      <%= javascript_include_tag 'application' %>
-      <%= yield :after_js %>
-      <%= render "shared/footer" %>
-    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
 
