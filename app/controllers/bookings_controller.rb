@@ -13,21 +13,18 @@ class BookingsController < ApplicationController
     @booking.total_price  = xmas_item.price_per_day * (@booking.end_date - @booking.start_date + 1)
 
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
   end
 
   def show
-    @xmas_item = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def index
-    @xmas_items = []
-    current_user.bookings.each do |booking|
-      @xmas_items << booking.xmas_item
-    end
+    @bookings = current_user.bookings
   end
 
 
