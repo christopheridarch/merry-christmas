@@ -1,6 +1,5 @@
-<div class="container text-left">
   <div class="form-container">
-    <h1>Book  <%= @xmas_item.name.capitalize %> à <%= @xmas_item.user.firstname.capitalize %></h1>
+    <h2>Book  <%= @xmas_item.name.capitalize %> à <%= @xmas_item.user.firstname.capitalize %></h2>
     <%= simple_form_for([@xmas_item, @booking]) do |form| %>
       <%= form.input :start_date %>
       <%= form.input :end_date %>
@@ -9,4 +8,4 @@
       </div>
     <% end %>
   </div>
-</div>
+
