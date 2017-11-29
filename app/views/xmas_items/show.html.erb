@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+    <div class="xmasItemPhoto">
+       <%= cl_image_tag @xmasItem.photo, height: 400, width: 350, crop: :fill %>
+    </div>
+  </div>
+
+  <div class="col-xs-6 col-sm-4">
+    <div class="description">
+      <p><%= @xmasItem.name.capitalize %></p>
+      <p>Description: <%= @xmasItem.description.capitalize %></p>
+      <p><%= @xmasItem.description.capitalize %></p>
+      <p>Address: <%= @xmasItem.address.capitalize%></p>
+    </div>
+    <div class="price">
+      <p><p>Price: <%= @xmasItem.price_per_day%>€</p></p>
+    </div>
+
+  </div>
+  <div class="col-xs-6 col-sm-4">
+    <div class="bookingform">
+      <p>form</p>
+    </div>
+  </div>
+
+
+</div>
