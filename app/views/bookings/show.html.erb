@@ -1,2 +1,26 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="row">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="xmasItemPhoto">
+       <%= cl_image_tag @xmas_item.photo, height: 600, width: 500, crop: :fill %>
+     </div>
+   </div>
+
+   <div class="col-xs-12 col-sm-6">
+    <div class="description">
+      <h2><%= @xmas_item.name.capitalize %></h2>
+      <div class="avatar">
+       <%= cl_image_tag @xmas_item.user.avatar, height: 50, width: 50, crop: :fill%>
+       </div>
+      <p><%= @xmas_item.description.capitalize %></p>
+      <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= @xmas_item.address.capitalize%></p>
+    </div>
+    <div class="price">
+      <p>Price: <%= @xmas_item.price_per_day%>€</p>
+    </div>
+
+
+  </div>
+</div>
+
