@@ -14,6 +14,9 @@
       <div class="avatar">
        <%= cl_image_tag @xmas_item.user.avatar, height: 50, width: 50, crop: :fill%>
      </div>
+     <div class="name">
+       <%= cl_image_tag @xmas_item.user.firstname, height: 50, width: 50, crop: :fill%>
+     </div>
      <p><%= @xmas_item.description.capitalize %></p>
      <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= @xmas_item.address.capitalize%></p>
    </div>
