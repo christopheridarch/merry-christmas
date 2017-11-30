@@ -1,10 +1,10 @@
 /* Main navbar */
 
-a{
+.navbar-wagon a{
   color: white;
 }
 
-a:hover{
+.navbar-wagon a:hover{
   color: white;
   text-decoration: none;
 }
@@ -57,6 +57,7 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 800px;
 }
 
 /* Basic navbar item */
@@ -64,6 +65,7 @@ a:hover{
   cursor: pointer;
   padding: 0 20px;
 }
+
 
 /* Navbar link */
 .navbar-wagon-link {
