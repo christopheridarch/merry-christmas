@@ -9,11 +9,29 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Louer un Item", new_owner_xmas_item_path%>
 
-    <% if user_signed_in? && current_user.xmas_items != 0 %>
-      <%= link_to "My Xmas Items", owner_xmas_items_path %>
-    <% end %>
+      <%= link_to xmas_items_path do%>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        Search
+      <%end  %>
+      <%= link_to new_owner_xmas_item_path do%>
+        <i class="fa fa-plus" aria-hidden="true"> </i>
+          Add
+      <%end  %>
+
+      <% if user_signed_in? && current_user.xmas_items.size != 0 %>
+        <%= link_to "My chrismas items", owner_xmas_items_path %>
+      <% end %>
+
+      <% if user_signed_in? && current_user.bookings.size != 0 %>
+        <%= link_to bookings_path do %>
+          <i class="fa fa-gift" aria-hidden="true"></i>
+            My whish list
+        <% end  %>
+      <% end %>
+
+
+
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -49,7 +67,7 @@
         <% end  %>
       </div>
     </div>
-  </div>
+  </div></div>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
