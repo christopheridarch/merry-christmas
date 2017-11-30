@@ -14,7 +14,7 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%if current_user%>
+        <%if current_user %>
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/oscaredel", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
               <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                 <li>
@@ -23,7 +23,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "#" do %>
+                  <%= link_to root_path do %>
                     <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
                   <% end %>
                 </li>
