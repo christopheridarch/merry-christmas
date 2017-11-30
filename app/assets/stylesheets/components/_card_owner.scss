@@ -29,10 +29,10 @@
   border-width: 1px;
 }
 
-.card-owner-query {
+.card-owner-queries {
   position: absolute;
   right: 10px;
-  top: 10px;
+  bottom: 10px;
 }
 
 .card-owner-price {
@@ -44,7 +44,20 @@
 }
 
 .circle-green {
-  background-color: green;
+  background-color: $green;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  p {
+    margin: 0;
+  }
+}
+
+.circle-red {
+  background-color: $red;
   border-radius: 50%;
   height: 50px;
   width: 50px;
