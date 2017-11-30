@@ -4,8 +4,7 @@ class Owner::XmasItemsController < ApplicationController
   end
 
   def show
-    @xmas_item
-
+    @xmas_item  = XmasItem.find(params[:id])
   end
 
   def new
@@ -29,7 +28,3 @@ private
   end
 
 end
-
-
-
-

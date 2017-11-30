@@ -17,6 +17,7 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
+
         <%if current_user%>
               <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
@@ -27,7 +28,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to "#" do %>
+                  <%= link_to root_path do %>
                     <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
                   <% end %>
                 </li>

@@ -1,0 +1,69 @@
+ <!--
+ show item name and description and small image
+ show all the requests with name/avatar of renter, and status
+  -->
+ <div class="container">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 text-center">
+      <div class="xmasItemPhoto delimiter_bloc_right">
+       <%= cl_image_tag @xmas_item.photo, height: 600%>
+      </div>
+   </div>
+
+   <div class="col-xs-12 col-sm-6">
+    <div class="container_right">
+     <div class="description">
+      <h2><%= @xmas_item.name.capitalize %></h2>
+      <div class="avatar">
+       <%= cl_image_tag @xmas_item.user.avatar, height: 50, width: 50, crop: :fill%>
+     </div>
+     <p><%= @xmas_item.description.capitalize %></p>
+     <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= @xmas_item.address.capitalize%></p>
+   </div>
+   <div class="price delimiter_bloc_bottom">
+    <p>Price: <%= @xmas_item.price_per_day%>€</p>
+  </div>
+
+
+
+  <div class="statusdiv">
+
+    <% @xmas_item.bookings.each do |booking| %>
+    <li>
+    <%= booking.user.lastname %>
+    <%= booking.user.firstname %>
+    asked the item for booking from <%= booking.start_date %>
+    until <%= booking.end_date %>
+    for <%= booking.total_price %>€
+    Request status : <%= booking.status %>
+    </li>
+    <% if booking.status == "Pending"%>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <ul>
+        <li><%= link_to 'Accept', accept_owner_reservation_path(booking), method: :patch, class:"dropdown-item" %></li>
+        <li><%= link_to 'Decline', decline_owner_reservation_path(booking), class:"dropdown-item" %></li>
+        </ul>
+      </div>
+      <%end%>
+    </div>
+    <% end %>
+    <div class="navbar-signin">
+<!-- ajouter if pending, show button      -->
+  </div>
+  <%= link_to "Return to my items", owner_xmas_items_path, class: "btn btn-danger btn-lg see-all-xmas-items" %>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
