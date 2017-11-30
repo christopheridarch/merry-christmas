@@ -2,20 +2,13 @@
   margin-left: 0px;
   margin-right: 0px;
   background-color: white;
-  height :100vh;
+  height :auto;
 }
 
-
-
-.breadcrumb {
-    padding: 8px 15px;
-    /* margin-bottom: 25px; */
-    list-style: none;
-    background-color: #ffffff;
-    border-radius: 2px;
-    font-size: x-small;
-    margin: 10px -14px 6px;
+.row h2, p{
+  font-family: Open Sans;
 }
+
 
 .price{
   font-weight: 700;
@@ -28,6 +21,7 @@
 
 .xmasItemPhoto img{
   border-radius: 4px;
+  padding-bottom: 40px;
 }
 
 
@@ -39,4 +33,19 @@
 .avatar img{
   border-radius: 50%;
   margin-bottom: 18px;
+}
+
+.delimiter_bloc_bottom {
+  border-bottom: 1px solid #efecec;
+}
+
+
+.delimiter_bloc_right {
+  border-right: 1px solid #efecec;
+  margin-bottom: 20px;
+}
+
+
+.container_right{
+  padding-left: 40px;
 }

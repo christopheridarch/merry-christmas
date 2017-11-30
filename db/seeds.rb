@@ -66,7 +66,8 @@ sapin.save!
 
 lutin = XmasItem.new(user: paul,
   name: "lutin",
-  description: "lutin Games of thrones",
+  description: "Luca le lutin artiste, argent et vert, adore peindre et jouer de la guitare.
+  C'est un vrai artiste dans l'âme, son visage est fait de plastique et il mesure 16''. C'est un vrai joueur de mauvais coups. ",
   price_per_day: 50,
   available: true,
   photo: File.open(Rails.root.join('db/fixtures/images/lutin.jpg')),
@@ -76,7 +77,9 @@ lutin.save!
 
 pull = XmasItem.new(user: pauline,
   name: "Pull de noel",
-  description: "Pull de noel Kiabi",
+  description: "Véritable phénomène de mode outre-Atlantique,
+  le pull de Noël revient cette année avec des motifs toujours aussi fun et décalés !
+  Célébrez les fêtes de fin d'année de la manière la plus tendance qui soit ! ",
   price_per_day: 25,
   available: true,
   photo: File.open(Rails.root.join('db/fixtures/images/pull.jpg')),
@@ -105,7 +108,8 @@ chaussette.save!
 
 geant_noel = XmasItem.new(user: francois,
   name: "Geant de noel",
-  description: "geant_noel Games of thrones",
+  description: "Noël approche, il est temps de se préparer.Roland le Géant enfile alors son long manteau d'hiver...
+  Au fil de sa promenade, il trouve de drôles d'objets et rencontre de nouveaux compagnons qu'il glisse dans ses 24 Poches : une étoile, un bouquet de sapins, des lutins, un pingouin... ",
   price_per_day: 50,
   available: true,
   photo: File.open(Rails.root.join('db/fixtures/images/geant.jpg')),
@@ -114,7 +118,7 @@ geant_noel.save!
 
 creche = XmasItem.new(user: jerome,
   name: "Creche de noel",
-  description: "Creche de noel de bethleme",
+  description: "Une crèche originale et moderne accompagnée de jolis santons traditionnels.",
   price_per_day: 25,
   available: true,
   photo: File.open(Rails.root.join('db/fixtures/images/creche.jpg')),
@@ -123,7 +127,8 @@ creche.save!
 
 sapin_artificiel = XmasItem.new(user: jerome,
   name: "Sapin artificielle",
-  description: "Sapin artificielle de noel",
+  description: "Le sapin artificiel de Noël Mix Vancouver a un aspect très réaliste grâce à la qualité et à l'aspect de ses branches.
+  Le sapin de Noël artificiel est un très bon choix : esthétique, pratique, facile d'utilisation, vous le garderez très longtemps !",
   price_per_day: 5,
   available: true,
   photo: File.open(Rails.root.join('db/fixtures/images/sapin_artificiel.jpg')),
