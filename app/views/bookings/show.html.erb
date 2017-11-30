@@ -20,10 +20,11 @@
       <p>Total Price: <%= @booking.total_price%>€</p>
       <p>Price per day: <%= @booking.xmas_item.price_per_day%>€</p>
       <p>Number of day: <%= (@booking.end_date - @booking.start_date + 1).to_i%></p>
+      <p>Status: <%= @booking.status%></p>
     </div>
 
 
-    <%= link_to "See my reservations", bookings_path, class:"btn btn-primary" %>
+    <%= link_to "See all my bookings", bookings_path, class:"btn btn-primary" %>
   </div>
 </div>
 

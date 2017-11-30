@@ -6,14 +6,15 @@
 <div class="container">
   <h1 class="text-center ml6">
     <span class="text-wrapper">
-      <span class="letters christmas-red-color">Merry Christmas </span>
+      <span class="letters christmas-red-color">Vos Réservations </span>
     </span>
   </h1>
 
-  <%= link_to "See all the Christmas Items", xmas_items_path, class:"btn btn-primary text-center" %>
+  <div class="text-center" margin="20px">
+      <%= link_to "See all the Christmas Items", xmas_items_path, class:"btn btn-primary" %>
+  </div>
 
   <div class="row">
-      <h2 class="text-center">Voici vos réservations</h2>
 
     <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-4">
