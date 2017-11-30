@@ -6,20 +6,24 @@ class Owner::XmasItemsController < ApplicationController
     @xmas_item  = XmasItem.find(params[:id])
   end
 
-  # def accept
-  #   @xmas_item.status = "Accepted"
-  #   redirect_to @xmas_item
-  # end
+  def new
+    @xmas_item = XmasItem.new
+  end
 
-  # def decline
-  #   @xmas_item.status = "Declined"
-  #   redirect_to @xmas_item
-  # end
+  def create
+    @xmas_item = XmasItem.new(xmas_item_params)
+    @xmas_item.user = current_user
+    if @xmas_item.save
+      redirect_to xmas_items_path
+    else
+      render :new
+    end
+  end
 
-  private
+private
 
-  # def xmas_item_params params.require(:xmas_item).permit(:status)
-  # end
+  def xmas_item_params
+    params.require(:xmas_item).permit(:name, :description, :address, :photo, :price_per_day)
+  end
+
 end
-
-

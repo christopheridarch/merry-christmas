@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   #As a Owner
   namespace :owner do
-    resources :xmas_items, only: [:index, :show]
+    resources :xmas_items, only: [:index, :show ,:new, :create]
     resources :reservations, only: [] do
       member do
         patch :accept
