@@ -15,7 +15,7 @@
     <% @xmas_items.each do |xmas_item| %>
       <div class="col-xs-12 col-sm-6">
 
-        <%= link_to xmas_item_path(xmas_item) do %>
+        <%= link_to owner_xmas_item_path(xmas_item) do %>
           <div class="card-owner-container">
             <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
             <div class="card-owner" style="
@@ -30,6 +30,13 @@
                     <p> <%= xmas_item.price_per_day %> €</p>
                   </div>
                 </div>
+                <% if xmas_item.bookings.size != 0 %>
+                <div class="card-owner-queries">
+                  <div class="circle-red">
+                    <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+                  </div>
+                </div>
+                <% end  %>
             </div>
 
             <div class="card-owner-edit">
@@ -38,7 +45,6 @@
                <% end  %>
 
             </div>
-
             <div class="card-owner-destroy"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
           </div>
       <%end  %>
