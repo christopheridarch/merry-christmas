@@ -4,38 +4,58 @@
 
 
 <div class="container">
+
   <h1 class="text-center ml6">
     <span class="text-wrapper">
-      <span class="letters christmas-red-color">Vos Réservations </span>
+      <span class="letters christmas-red-color">Your Bookings </span>
     </span>
   </h1>
 
-  <div class="text-center" margin="20px">
-      <%= link_to "See all the Christmas Items", xmas_items_path, class:"btn btn-primary" %>
-  </div>
 
   <div class="row">
-
     <% @bookings.each do |booking| %>
       <div class="col-xs-12 col-sm-4">
 
         <%= link_to booking_path(booking) do %>
-          <% bg_img_path = cl_image_path booking.xmas_item.photo, height: 300, width: 400, crop: :fill %>
-          <div class="card" style="
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-            url('<%= bg_img_path %>')">
-            <div class="card-category"><%= booking.xmas_item.name %></div>
-            <div class="card-description">
-              <h2><%= booking.xmas_item.description %></h2>
+          <div class="card-renter-container">
+            <% bg_img_path = cl_image_path booking.xmas_item.photo, height: 300, width: 400, crop: :fill  %>
+            <div class="card-renter" style="
+              background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= bg_img_path %>')">
+              <div class="card-renter-name"><%= booking.xmas_item.name %></div>
+              <div class="card-renter-address">
+                <h2><%= booking.xmas_item.address %></h2>
+              </div>
+              <%= cl_image_tag booking.xmas_item.user.avatar, height: 50, crop: :fill, class:"card-renter-owner" %>
             </div>
-              <%= cl_image_tag booking.xmas_item.user.avatar, height: 50, width: 50, crop: :fill, class:"card-user" %>
-          </div>
 
-      <% end %>
+
+
+            <div class="card-renter-look">
+              <%= link_to  booking_path(booking) do %>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+               <% end  %>
+            </div>
+            <div class="card-renter-destroy">
+              <%= link_to  booking_path(booking) ,method: :delete, data: { confirm: 'Are you sure ?'} do %>
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              <% end  %>
+            </div>
+            <div class="card-renter-statut">
+              <% if booking.status == "pending" %>
+                <i class="fa fa-pause" aria-hidden="true"></i>
+              <% elsif booking.status == "accept" %>
+                <i class="fa fa-check" aria-hidden="true"></i>
+              <% else  %>
+                <i class="fa fa-ban" aria-hidden="true"></i>
+              <% end  %>
+            </div>
+
+          </div>
+        <% end %>
+
       </div>
     <% end %>
   </div>
-
-
 
 </div>

@@ -7,7 +7,7 @@
 
   <h1 class="text-center ml6">
     <span class="text-wrapper">
-      <span class="letters christmas-red-color">Welcome on Merry Christmas</span>
+      <span class="letters christmas-red-color">Your Christmas Items</span>
     </span>
   </h1>
 
@@ -22,8 +22,8 @@
               background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
               url('<%= bg_img_path %>')">
               <div class="card-owner-name"><%= xmas_item.name %></div>
-              <div class="card-owner-description">
-                <h2><%= xmas_item.description %></h2>
+              <div class="card-owner-address">
+                <h2><%= xmas_item.address %></h2>
               </div>
                 <div class="card-owner-price">
                   <div class="circle-green">
@@ -43,18 +43,16 @@
               <%= link_to  owner_xmas_item_path(xmas_item) do %>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
                <% end  %>
-
             </div>
-            <div class="card-owner-destroy"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+            <div class="card-owner-destroy">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
           </div>
+
       <%end  %>
 
       </div>
     <% end %>
   </div>
-
-
-
-
 
 </div>
