@@ -1,0 +1,68 @@
+.statusdiv {
+  position: relative;
+
+}
+.infos {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.requests {
+  display: flex;
+}
+.marging {
+  margin-top: 10px;
+}
+.request {
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    margin-right: 0px;
+    height: auto;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 2%;
+    padding-left: 10px;
+}
+.gray {
+ color: rgb(200,200,200);
+ background-color: rgb(240,240,240);
+}
+.request-description {
+  flex: 1 1 auto;
+  margin: 10px;
+  // top: 10px;
+  // left: 10px;
+}
+.resquest-status {
+  flex: 0 0 200px;
+  margin: 10px;
+  background-color: $brandblue;
+  border-radius: 5%;
+  color: white;
+  text-align: center;
+  // top: 10px;
+  // right: 10px;
+}
+.request-validation {
+  flex: 0 0 200px;
+  // top: 10px;
+  // right: 10px;
+}
+
+.shadow {
+  box-shadow: 2px 2px 3px gray;
+}
+.requests {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.index-link {
+
+}
+
