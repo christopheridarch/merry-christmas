@@ -32,8 +32,12 @@
         <% end  %>
       <% end %>
 
-      <% if user_signed_in? && current_user.xmas_items.size != 0 %>
-        <%= link_to "My chrismas items", owner_xmas_items_path %>
+      <% if user_signed_in? && current_user.xmas_items.any? %>
+        <% pending_resas = current_user.reservations.where(status: 'pending').count %>
+        <%= link_to  owner_xmas_items_path do %>
+          <i class="fa fa-snowflake-o" aria-hidden="true"></i>
+          My chrismas items (<%= pending_resas %>)
+        <% end  %>
       <% end %>
 
 
