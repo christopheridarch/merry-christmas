@@ -1,2 +1,58 @@
-<h1>Owner::XmasItems#index</h1>
-<p>Find me in app/views/owner/xmas_items/index.html.erb</p>
+<%= content_for(:before_js) do %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<% end  %>
+
+
+<div class="container">
+
+  <h1 class="text-center ml6">
+    <span class="text-wrapper">
+      <span class="letters christmas-red-color">Your Christmas Items</span>
+    </span>
+  </h1>
+
+  <div class="row">
+    <% @xmas_items.each do |xmas_item| %>
+      <div class="col-xs-12 col-sm-6">
+
+        <%= link_to owner_xmas_item_path(xmas_item) do %>
+          <div class="card-owner-container">
+            <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
+            <div class="card-owner" style="
+              background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('<%= bg_img_path %>')">
+              <div class="card-owner-name"><%= xmas_item.name %></div>
+              <div class="card-owner-address">
+                <h2><%= xmas_item.address %></h2>
+              </div>
+                <div class="card-owner-price">
+                  <div class="circle-green">
+                    <p> <%= xmas_item.price_per_day %> €</p>
+                  </div>
+                </div>
+                <% if xmas_item.bookings.size != 0 %>
+                <div class="card-owner-queries">
+                  <div class="circle-red">
+                    <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+                  </div>
+                </div>
+                <% end  %>
+            </div>
+
+            <div class="card-owner-edit">
+              <%= link_to  owner_xmas_item_path(xmas_item) do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+               <% end  %>
+            </div>
+            <div class="card-owner-destroy">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </div>
+          </div>
+
+      <%end  %>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
