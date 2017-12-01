@@ -4,7 +4,7 @@
       <div class="title">
         <h2>Edit your Xmas Item</h2>
       </div>
-        <%= simple_form_for(@xmas_item, url: owner_xmas_item_path) do |f| %>
+        <%= simple_form_for([:owner, @xmas_item]) do |f| %>
         <%= f.input :name,  label: 'Product name', error: 'Product name is compulsory'%>
         <%= f.input :description, label: 'Product description' %>
         <%= f.input :address, label: 'Product location'  %>

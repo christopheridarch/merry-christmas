@@ -29,7 +29,7 @@ class Owner::XmasItemsController < ApplicationController
   end
 
   def update
-    if @xmas_item.save(xmas_item_params)
+    if @xmas_item.update(xmas_item_params)
       redirect_to @xmas_item, notice: 'Item was successfully updated.'
     else
       render :edit
