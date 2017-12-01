@@ -33,7 +33,7 @@
                 <% if xmas_item.bookings.size != 0 %>
                 <div class="card-owner-queries">
                   <div class="circle-red">
-                    <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></p>
+                    <p> <%= xmas_item.bookings.where(status: 'pending').size %></p>
                   </div>
                 </div>
                 <% end  %>

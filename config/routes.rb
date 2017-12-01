@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   #As a Owner
   namespace :owner do
-    resources :xmas_items, only: [:index, :show ,:new, :create]
+    resources :xmas_items, only: [:index, :show ,:new, :create, :edit, :update]
     resources :reservations, only: [] do
       member do
         patch :accept
@@ -25,3 +25,4 @@ end
 
 
 
+  # patch 'tasks/:id', to: 'tasks#update'
