@@ -1,7 +1,20 @@
 .card-owner-container {
   position: relative;
-  height: 270px;
+  height: 370px;
   width: 100%;
+  margin: 10px;
+}
+
+.card-owner-links {
+  // position: absolute;
+  // bottom: 1px;
+  // left: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-owner-button {
   margin: 10px;
 }
 
@@ -34,6 +47,7 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
+  color: white;
 }
 
 .card-owner-price {
