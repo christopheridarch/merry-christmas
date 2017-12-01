@@ -1,5 +1,5 @@
 <%= content_for(:before_js) do %>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 <% end  %>
 
 
@@ -13,50 +13,43 @@
 
   <div class="row">
     <% @xmas_items.each do |xmas_item| %>
-      <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-owner-container">
+        <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
+        <%= link_to owner_xmas_item_path(xmas_item) do %>
 
-          <div class="card-owner-container">
-            <% bg_img_path = cl_image_path xmas_item.photo, height: 300, width: 400, crop: :fill %>
-                  <%= link_to owner_xmas_item_path(xmas_item) do %>
+          <div class="card-owner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0, 0.2)),url('<%= bg_img_path %>')">
 
-           <div class="card-owner" style="
-              background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('<%= bg_img_path %>')">
-              <div class="card-owner-name"><%= xmas_item.name %></div>
-              <div class="card-owner-address">
-                <h2><%= xmas_item.address %></h2>
+            <div class="card-owner-name"><%= xmas_item.name %></div>
+            <div class="card-owner-address"><h2><%= xmas_item.address %></h2></div>
+            <div class="card-owner-price">
+              <div class="circle-green">
+                <p> <%= xmas_item.price_per_day %> €</p>
               </div>
-                <div class="card-owner-price">
-                  <div class="circle-green">
-                    <p> <%= xmas_item.price_per_day %> €</p>
-                  </div>
-                </div>
-                <% if xmas_item.bookings.size != 0 %>
-                <div class="card-owner-queries">
-                  <%  if  xmas_item.bookings.where(status: 'pending').size == 0   %>
+            </div>
+
+            <% if xmas_item.bookings.size != 0 %>
+              <div class="card-owner-queries">
+                <%  if  xmas_item.bookings.where(status: 'pending').size == 0   %>
                   <span> (0) request </span>
-                  <% else  %>
+                <% else  %>
                   <span > <%= pluralize xmas_item.bookings.where(status: 'pending').size, "request" %></span>
-                  <% end  %>
-                </div>
-                <% end  %>
-            </div>
-
-
+               <% end  %>
+              </div>
+            <% end  %>
+        </div>
+      <% end  %>
             <div class="card-owner-links">
-              <%= link_to  edit_owner_xmas_item_path(xmas_item), class:"btn btn-success card-owner-button"  do%>
-               <i class="fa fa-pencil" aria-hidden="true" padding="10px"></i> edit
-              <% end %>
-              <%= link_to edit_owner_xmas_item_path(xmas_item), class:"btn btn-danger card-owner-button" do %>
-                <i class="fa fa-trash" aria-hidden="true"></i> delete
-              <% end  %>
-            </div>
-
-
-
-
+        <%= link_to  edit_owner_xmas_item_path(xmas_item), class:"btn btn-success card-owner-button"  do%>
+        <i class="fa fa-pencil" aria-hidden="true" padding="10px"></i> edit
+        <% end %>
+        <%= link_to edit_owner_xmas_item_path(xmas_item), class:"btn btn-danger card-owner-button" do %>
+        <i class="fa fa-trash" aria-hidden="true"></i> delete
+        <% end  %>
       </div>
-    <% end %>
+    </div>
+
   </div>
+    <% end %>
 
 </div>
