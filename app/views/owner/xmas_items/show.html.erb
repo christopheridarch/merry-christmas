@@ -2,7 +2,8 @@
  show item name and description and small image
  show all the requests with name/avatar of renter, and status
   -->
-<div class="wrapper">
+<div class="container">
+<div class="row">
 
 
   <div class="col-xs-12 col-sm-3 text-center">
@@ -14,9 +15,7 @@
 
   <div class="col-xs-12 col-sm-9">
 
-       <div class="delimiter_bloc_bottom">
-        <%= link_to "Return to my items", owner_xmas_items_path %>
-      </div>
+
       <div class="item-infos">
         <h2><%= @xmas_item.name.capitalize %></h2>
         <p>Description: <%= @xmas_item.description.capitalize %></p>
@@ -48,36 +47,30 @@
             </div>
 
             <div class="request-validation">
-              <div>
-              <% if booking.status == "Pending"%>
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <div>Status : Pending</div>
-                  <div>Change status</div>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <ul>
-                  <li><%= link_to 'Accept', accept_owner_reservation_path(booking), method: :patch, class:"dropdown-item" %></li>
-                  <li><%= link_to 'Decline', decline_owner_reservation_path(booking), class:"dropdown-item" %></li>
-                  </ul>
-                </div>
 
+              <% if booking.status == "pending"%>
+                <button class="btn btn-success">
+                  <%= link_to 'accept', accept_owner_reservation_path(booking), method: :patch%>
+                </button>
+
+                <button class="btn btn-danger">
+                 <%= link_to 'decline', decline_owner_reservation_path(booking), method: :patch%>
+                </button>
 
                 <%end%>
-              </div>
+            </div>
 
             <div class="resquest-status">
               Request status : <%= booking.status %>
             </div>
 
-            </div>
           </div>
+        </div>
         <% end %>
-      </div>
-
 
   </div>
 </div>
-
+</div>
 
 
 
