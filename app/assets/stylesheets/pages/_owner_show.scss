@@ -14,17 +14,58 @@
 .marging {
   margin-top: 10px;
 }
-.request {
+.pending-request {
     display: flex;
     align-items: center;
     font-family: Open Sans;
     margin-right: 0px;
     height: auto;
-    border: 1px solid gray;
+    border: 1px solid rgb(200,200,200);
     margin-bottom: 10px;
     margin-top: 10px;
-    border-radius: 2%;
+    border-radius: 5px;
     padding-left: 10px;
+    background-image: asset-url('snow-background.jpg');
+}
+.accepted-request {
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    margin-right: 0px;
+    height: auto;
+    border: 1px solid rgb(200,200,200);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-image: asset-url('green-background.jpg');
+}
+.declined-request {
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    margin-right: 0px;
+    height: auto;
+    border: 1px solid rgb(200,200,200);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-image: asset-url('red-background.jpg');
+}
+.filter{
+    background-color: white;
+    opacity: 0.8;
+}
+.darkfilter{
+   background-color: black;
+    // opacity: 0.3;
+}
+.owner-xmas-item-photo {
+  border-radius: 100px;
+}
+.paddingtop{
+  padding-top: 20px;
 }
 .gray {
  color: rgb(200,200,200);
@@ -33,18 +74,16 @@
 .request-description {
   flex: 1 1 auto;
   margin: 10px;
-  // top: 10px;
-  // left: 10px;
+  color: white;
 }
 .resquest-status {
   flex: 0 0 200px;
   margin: 10px;
-  background-color: $brandblue;
-  border-radius: 5%;
+  // background-color: white;
+  // border-radius: 10px;
   color: white;
   text-align: center;
-  // top: 10px;
-  // right: 10px;
+  // border: 1px dotted white;
 }
 .request-validation {
   flex: 0 0 200px;
@@ -62,6 +101,6 @@
 }
 
 .index-link {
-
 }
+
 
