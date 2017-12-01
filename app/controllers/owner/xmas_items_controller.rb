@@ -1,4 +1,7 @@
 class Owner::XmasItemsController < ApplicationController
+  before_action :set_xmas_item, only: [:edit, :update]
+
+
   def index
     @xmas_items = current_user.xmas_items
   end
@@ -21,10 +24,26 @@ class Owner::XmasItemsController < ApplicationController
     end
   end
 
-private
+  def edit
+    @xmas_item = XmasItem.find(params[:id])
+  end
+
+  def update
+    if @xmas_item.save(xmas_item_params)
+      redirect_to @xmas_item, notice: 'Item was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+
+  private
 
   def xmas_item_params
     params.require(:xmas_item).permit(:name, :description, :address, :photo, :price_per_day)
   end
 
+   def set_xmas_item
+    @xmas_item = XmasItem.find(params[:id])
+  end
 end

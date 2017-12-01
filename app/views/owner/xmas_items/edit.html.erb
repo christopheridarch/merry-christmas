@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="form-container-owner">
+      <div class="title">
+        <h2>Edit your Xmas Item</h2>
+      </div>
+        <%= simple_form_for(@xmas_item, url: owner_xmas_item_path) do |f| %>
+        <%= f.input :name,  label: 'Product name', error: 'Product name is compulsory'%>
+        <%= f.input :description, label: 'Product description' %>
+        <%= f.input :address, label: 'Product location'  %>
+        <%= f.input :price_per_day, label: 'Price per day'  %>
+        <%= f.input :photo, label: "Upload Photo", error: 'photo is compulsory' %>
+        <div class="text-right">
+          <%= f.submit class: "btn btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
