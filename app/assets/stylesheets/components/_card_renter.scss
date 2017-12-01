@@ -1,23 +1,29 @@
-.card-owner-container {
+.card-renter-container {
   position: relative;
   height: 270px;
   width: 100%;
   margin: 10px;
 }
 
-.card-owner-edit {
+.card-renter-look {
   position: absolute;
   top: 5px;
-  right: 2px;
+  right: -15px;
 }
 
-.card-owner-destroy {
+.card-renter-destroy {
   position: absolute;
   top: 30px;
-  right: 2px;
+  right: -15px;
 }
 
-.card-owner {
+.card-renter-statut {
+  position: absolute;
+  top: 60px;
+  right: -15px;
+}
+
+.card-renter {
   height: 265px;
   width: 90%;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -30,13 +36,21 @@
   border-width: 1px;
 }
 
-.card-owner-queries {
+.card-renter-owner {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.card-renter-queries {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
 
-.card-owner-price {
+.card-renter-price {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -70,7 +84,7 @@
   }
 }
 
-.card-owner-name {
+.card-renter-name {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -78,26 +92,26 @@
   text-transform: uppercase;
 }
 
-.card-owner-photo {
+.card-renter-photo {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
 
-.card-owner-address {
+.card-renter-address {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
-.card-owner-address h2 {
+.card-renter-address h2 {
   font-size: 24px;
 }
-.card-owner-address p {
+.card-renter-address p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
 }
-.card-owner-link {
+.card-renter-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -107,6 +121,6 @@
   background: black;
   opacity: 0;
 }
-.card-owner-link:hover {
+.card-renter-link:hover {
   opacity: 0.1;
 }

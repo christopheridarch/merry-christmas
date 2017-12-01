@@ -1,30 +1,48 @@
-<div class="row">
+ <div class="container">
 
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="xmasItemPhoto">
-       <%= cl_image_tag @booking.xmas_item.photo, height: 600, width: 500, crop: :fill %>
+    <div class="col-xs-12 col-sm-6 text-center">
+      <div class="xmasItemPhoto delimiter_bloc_right">
+       <%= cl_image_tag @booking.xmas_item.photo, height: 600%>
      </div>
    </div>
 
    <div class="col-xs-12 col-sm-6">
-    <div class="description">
+    <div class="container_right">
+     <div class="description">
       <h2><%= @booking.xmas_item.name.capitalize %></h2>
       <div class="avatar">
-       <%= cl_image_tag @booking.xmas_item.user.avatar, height: 50, width: 50, crop: :fill%>
-       </div>
-      <p><%= @booking.xmas_item.description.capitalize %></p>
-      <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= @booking.xmas_item.address.capitalize%></p>
-    </div>
-    <div class="price">
-      <p>Total Price: <%= @booking.total_price%>€</p>
-      <p>Price per day: <%= @booking.xmas_item.price_per_day%>€</p>
-      <p>Number of day: <%= (@booking.end_date - @booking.start_date + 1).to_i%></p>
-      <p>Status: <%= @booking.status%></p>
-    </div>
-
-
-    <%= link_to "See all my bookings", bookings_path, class:"btn btn-primary" %>
+       <%= cl_image_tag @booking.xmas_item.user.avatar, height: 50, crop: :fill%>
+     </div>
+     <div class="name">
+       <%= cl_image_tag @booking.xmas_item.user.firstname, height: 50, crop: :fill%>
+     </div>
+     <p><%= @booking.xmas_item.description.capitalize %></p>
+     <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= @booking.xmas_item.address.capitalize%></p>
+   </div>
+   <div class="price delimiter_bloc_bottom">
+    <p>Total Price: <%= @booking.total_price%>€</p>
+    <p>Price per day: <%= @booking.xmas_item.price_per_day%>€</p>
+    <p>Number of day: <%= (@booking.end_date - @booking.start_date + 1).to_i%></p>
+    <p>Start date : <%= @booking.start_date %> End date : <%= @booking.end_date %></p>
+    <p>Status:
+      <% if @booking.status == "pending" %>
+        <i class="fa fa-pause" aria-hidden="true"></i>
+      <% elsif @booking.status == "accept" %>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      <% else  %>
+        <i class="fa fa-ban" aria-hidden="true"></i>
+        <% end  %>
+      </p>
   </div>
+
+  <div class>
+    <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@booking.xmas_item.address}" %>
+    <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color" %>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=512x512&zoom=12&center=Nantes&format=png&style=feature:road.highway%7Celement:geometry%7Cvisibility:simplified%7Ccolor:0xc280e9&style=feature:transit.line%7Cvisibility:simplified%7Ccolor:0xbababa&style=feature:road.highway%7Celement:labels.text.stroke%7Cvisibility:on%7Ccolor:0xb06eba&style=feature:road.highway%7Celement:labels.text.fill%7Cvisibility:on%7Ccolor:0xffffff" %>
+  </div>
+
 </div>
 
+</div>
+</div>

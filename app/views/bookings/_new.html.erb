@@ -1,9 +1,9 @@
   <div class="form-container">
     <h2></h2>
     <%= simple_form_for([@xmas_item, @booking]) do |form| %>
-      <%= form.input :start_date, as: :date  %>
+      <%= form.input :start_date, as: :string , input_html: { class: "datepicker date-container"}  %>
 
-      <%= form.input :end_date, as: :date %>
+      <%= form.input :end_date,  as: :string , input_html: { class: "datepicker date-container"}%>
 
       <div class="text-left">
         <%= form.submit "Ask for booking", class: "btn btn-danger" %>
@@ -11,3 +11,18 @@
     <% end %>
   </div>
 
+
+
+
+
+<%= content_for(:after_js) do %>
+  <script >
+      $('.datepicker').datepicker(
+        {
+    keyboardNavigation: false,
+    forceParse: false,
+    format: "dd/mm/yyyy"
+}
+        );
+  </script>
+<% end  %>
